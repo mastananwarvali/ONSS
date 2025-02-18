@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 24%;
+  /* margin-bottom: 16px; */
+  padding: 0 8px;
+  
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 50px 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  margin-top: 20px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+.main {
+  position: relative;
+}
+
+.big-circle {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 3px solid #bbbbbb;
+  border-radius: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  animation: Rotate 20s linear infinite;
+  -webkit-animation: Rotate 20s linear infinite;
+}
+
+.icon-block {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  background-color: #9ae3a0;
+  box-shadow: 0 0 10px #916e6e;
+}
+
+.icon-block img {
+  margin: 0px auto;
+  width: 80%;
+  animation: Rotate-reverse 20s linear infinite;
+  -webkit-animation: Rotate-reverse 20s linear infinite;
+}
+
+.icon-block:first-child {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.icon-block:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+}
+
+.icon-block:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+}
+
+.icon-block:nth-child(4) {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.rounding-sec {
+  position: relative;
+  height: 400px;
+  width: 400px;
+}
+
+.images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+/* img */
+
+.images {
+  margin-left: auto;
+  width: 300px;
+}
+
+.images img {
+  border-radius: 100%;
+  box-shadow: 0 0 20px #8d9096;
+  text-align: center;
+}
+.img-w {
+  width: 500px;
+  height: 300px;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+/*===== Colores =====*/
+:root {
+  --first-color: #080a0d;
+  --second-color: #0e2431;
+  --third-color: #ffffff;
+}
+
+/*===== Fuente y tipografia =====*/
+:root {
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== Margenes =====*/
+:root {
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+/*===== z index =====*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.dark-mode{
+  background-color: black;
+  color: var(--third-color);
+
+}
+
+#jobTitle{
+  animation: blinker 6s linear infinite;
+}
+
+@keyframes blinker {
+  70%{
+    opacity: .2;
+  }
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: -65px;
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 10.5%; /* Change the width to cover the entire title */
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+.nav-item {
+  margin-bottom: var(--mb-4);
+}
+.nav-link {
+  position: relative;
+  color: #fff;
+}
+.nav-link:hover {
+  position: relative;
+}
+.nav-link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav-logo img {
+  color: var(--second-color);
+  font-weight: var(--font-semi);
+  width: 20rem;
+}
+.nav-toggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/*===== HOME =====*/
+.home {
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+.home-data {
+  align-self: center;
+}
+.home-title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home-title-color {
+  color: var(--first-color);
+}
+
+.home-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 65%;
+}
+
+/*BUTTONS*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  border: 1px solid var(--first-color);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+}
+.button:hover {
+  background-color: #fff;
+  color: var(--first-color);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ABOUT =====*/
+
+
+section.about {
+  padding: 20vh 15px;
+}
+.about-container {
+  row-gap: 2rem;
+  text-align: center;
+}
+.about-subtitle {
+  margin-bottom: var(--mb-2);
+}
+.about-img {
+  justify-self: center;
+}
+.about-img img {
+  width: 200px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* .about-img img:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 1s ease;
+} */
+
+
+/* ===== EDUCATION =====*/
+
+.education-data{
+  /* border:1px solid red; */
+  
+  /* justify-content: space-between;
+  align-items: center; */
+  position: relative;
+  font-weight: var(--font-semi);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: var(--mb-4);
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  transition: 1s ease;
+}
+.education-name{
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   font-size: 20px;
+   cursor: pointer;
+  }
+  .education-platform{
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     font-size: 16px;
+     cursor: pointer;
+    }
+
+    .education-duration{
+      margin: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       font-size: 12px;
+       cursor: pointer;
+      }
+  
+      .education-data:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        background-color: wheat; /* Replace 'yourColor' with the desired color code or name */
+        transition: 1s ease;
+    }
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px) {
+ 
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-img {
+    right: 10%;
+  }
+  .rounding-sec {
+    margin: auto;
+}
+}
+
+/* about */
+
+.main h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: topSideAni 1s ease forwards;
+}
+
+
+.main {
+  position: relative;
+}
+
+.big-circle {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 3px solid #bbbbbb;
+  border-radius: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  animation: Rotate 20s linear infinite;
+  -webkit-animation: Rotate 20s linear infinite;
+}
+
+.icon-block {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  background-color: #9ae3a0;
+  box-shadow: 0 0 10px #916e6e;
+}
+
+.icon-block img {
+  margin: 0px auto;
+  width: 80%;
+  animation: Rotate-reverse 20s linear infinite;
+  -webkit-animation: Rotate-reverse 20s linear infinite;
+}
+
+.icon-block:first-child {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.icon-block:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+}
+
+.icon-block:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+}
+
+.icon-block:nth-child(4) {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.rounding-sec {
+  position: relative;
+  height: 400px;
+  width: 400px;
+}
+
+.images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+/* keyframe animation */
+
+@keyframes Rotate {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About the Team</h1>
+  
+</div> 
+<section class="about section" id="about">
+  <h2 class="section-title">Guided by</h2>
+
+  <div class="about-container bd-grid">
+    <div class="rounding-sec">
+      <div class="big-circle">
+        <div class="icon-block">
+          <a style="color: black;" href="https://github.com/deanurag" target="_blank" class="footer-icon"><i
+              class="bx bxl-github">
+              <br />
+              GitHub
+            </i></a>
+        </div> 
+        <div class="icon-block">
+          <a style="color: black;" href="https://in.linkedin.com/in/dr-anurag-d-46ba4a244?trk=people-guest_people_search-card" target="_blank"
+            class="footer-icon"><i class="bx bxl-linkedin">
+              <br />
+              LinkedIn</i></a>
+        </div>
+        <div class="icon-block">
+          <a style="color: black;" href="https://scholar.google.co.in/citations?user=vYq7zm8AAAAJ&hl=en" target="_blank"
+            class="footer-icon"><i class='bx bxl-instagram'>
+              <br />
+            Google Scholar</i></a>
+            </i>
+        </div>
+        <div class="icon-block">
+          <a style="color: black;" href="mailto:prajwalsritej2004@gmail.com" target="_blank"
+          class="footer-icon"><i class='bx bxl-gmail'>
+            <br />
+          Mail</i></a>
+          </i>           
+        </div>
+      </div>
+      <div class="images">
+        <img
+          src="anurag.jpeg"
+          alt="" class="img-w">
+      </div>
+    </div>
+    <div class="detail">
+      <h3>Hi, I'm</h3>
+      <h1><span style="color:#f9532d;">Dr.ANURAG</span>  DE</h1>
+      <p>Specialization Areas: Activity recognition for ambient intelligence,
+       Human fall detection,Cyber-physical Systems, Software Engineering, 
+                         Microprocessors.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="se1.jpg" alt="Jane" style="width:72.5%;height:20%;padding-left: 70px;">
+      <div class="container">
+        <h2>ANKAM SRINIVAS </h2>
+        <p class="title">Designer & Coding</p>
+        <!-- <p>Hello everyone this is ankam iam the designer.... </p> -->
+        <p>srinivas.21mis7009@vitapstudent.ac.in</p>
+        <p><button class="button">Contact : 8328609730</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="thanusma.jpg" alt="Mike" style="width:89%">
+      <div class="container">
+        <h2>Tippireddypalli Thanumsa</h2>
+        <p class="title">Coding & Testing</p>
+        <!-- <p>Hello everyone this is ankam iam theArt Director....</p> -->
+        <p>thanusma.21mis7092@vitapstudent.ac.in</p>
+        <p><button class="button">Contact : 8008636344</button></p>
+      </div>
+    </div>  
+  </div>
+   
+  <div class="column">
+    <div class="card">
+      <img src="murari.jpg" alt="John" style="width:89%;height:70%;padding-left: 70px;">
+      <div class="container">
+        <h2>Murari Jayasurya</h2>
+        <p class="title">Designer & Coding</p>
+        <!-- <p>Hello everyone this is ankam iam theArt Director.....</p> -->
+        <p>jayasurya.21mis7085@vitapstudent.ac.in</p>
+        <p><button class="button">Contact : 8332938885</button></p>  
+      </div>
+    </div>
+  </div>
+
+<div class="column">
+  <div class="card">
+    <img src="mastan.jpg"  alt="Mastan" style="width:79%;height:40%;padding-left: 80px;">
+    <div class="container">
+      <h2>Shaik MastanVali</h2>
+      <p class="title">Coding & Testing</p>
+      <!-- <p>Hello everyone this is ankam iam theArt Director....</p> -->
+      <p>mastanvali.21mis7091@vitapstudent.ac.in</p>
+      <p><button class="button">Contact : 9705430901</button></p>
+    </div>
+  </div> 
+</div>
+
+</body>
+<script>sr.reveal(".about-img", {});
+  sr.reveal(".about-subtitle", { delay: 400 });
+  sr.reveal(".about-text", { delay: 400 });</script>
+</html>

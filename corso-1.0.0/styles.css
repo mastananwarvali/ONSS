@@ -1,0 +1,329 @@
+/* Slider
+http://www.freshdesignweb.com/fashion-responsive-slider-tutorial.html
+*/
+/* Slider
+/*-----------------------------------------------------------------------------------*/
+/* Slider Container */
+.slider_container {
+    width: 100%;
+    max-width: 920px;
+    margin: auto;
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+    background: url(images/shadow_top.png) no-repeat top center;
+}
+
+/* FlexSlider Caption */
+.flex-caption {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.flex-caption h2 {
+    color: #303030;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px 0;
+    font-family: 'Ovo', serif;
+}
+
+/* Caption Title Line */
+.caption_title_line {
+    width: 100%;
+    max-width: 450px;
+    height: 75px;
+    padding: 10px 15px;
+    background: url(images/slider_caption_bg.png) repeat;
+    color: #303030;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* FlexSlider Control Nav */
+.flex-control-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flex-control-nav li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.flex-control-nav li a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.flex-control-nav li a:hover,
+.flex-control-nav li a.flex-active {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* FlexSlider Direction Nav */
+.flex-direction-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.flex-direction-nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.flex-direction-nav li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.flex-direction-nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+/* FlexSlider Styles */
+.flexslider {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.flexslider .slides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 0.5s ease;
+}
+
+.flexslider .slides > li {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    position: relative;
+}
+
+.flexslider .slides img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 10px solid #ededed;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.flexslider .slides img:hover {
+    transform: scale(1.05);
+}
+
+/* FlexSlider Navigation Styles */
+.flex-direction-nav {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.flex-direction-nav li {
+    margin: 0 10px;
+    display: inline-block;
+    list-style: none;
+}
+
+.flex-direction-nav li a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.flex-direction-nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* FlexSlider Caption Styles */
+.flex-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flex-caption h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.flex-caption p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+/* FlexSlider Control Nav Styles */
+.flex-control-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.flex-control-nav li {
+    margin: 0 5px;
+    display: inline-block;
+    list-style: none;
+}
+
+.flex-control-nav li a {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flex-control-nav li a:hover,
+.flex-control-nav li a.flex-active {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Direction Nav */
+/* Direction Nav */
+.flex-direction-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.flex-direction-nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flex-direction-nav li a {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.flex-direction-nav li a.next {
+    right: 0;
+    background: url(images/next.png) no-repeat center;
+}
+
+.flex-direction-nav li a.prev {
+    left: 0;
+    background: url(images/prev.png) no-repeat center;
+}
+
+.flex-direction-nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.flex-direction-nav li a.disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+/* Control Nav */
+/* FlexSlider Control Nav */
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.flex-control-nav li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.flex-control-nav li:first-child {
+    margin-left: 0;
+}
+
+.flex-control-nav li a {
+    width: 10px;
+    height: 10px;
+    display: block;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.flex-control-nav li a:hover,
+.flex-control-nav li a.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Media Queries
+/*-----------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1000px) {
+.slider_container{ width:90%; margin:0 0 0 2%; clear:both; background:none; padding:30px 0 0 0;}
+.flexslider {width: 100%; margin: 0; padding:0 0 30px 0;background:none;}
+.flex-direction-nav li a {width:45px; height:42px; margin:0; display: block; position: absolute; right:-10px; cursor: pointer; text-indent: -9999px;}
+.flex-direction-nav li a.next {background:url(images/next.png) no-repeat center; bottom:85px;}
+.flex-direction-nav li a.prev {background:url(images/prev.png) no-repeat center;bottom:40px;}
+.flex-caption { display:none;}
+}
