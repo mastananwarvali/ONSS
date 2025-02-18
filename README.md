@@ -54,3 +54,7 @@ Fashion Responsive Slider
 
 ### License
 College Notes Gallery is released under the MIT License
+
+git config --global user.name "mastananwarvali"
+git config --global user.email "mastananwarvali.com"
+"# ONSS" 
